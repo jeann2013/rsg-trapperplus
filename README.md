@@ -16,6 +16,8 @@
 - qr-menu
 
 # Installation
+- remove rsg-holding if you have it added
+- remove rsg-trapper if you have it added
 - ensure that the dependancies are added and started
 - add rsg-trapperplus to your resources folder
 - add items to your "\qr-core\shared\items.lua"
