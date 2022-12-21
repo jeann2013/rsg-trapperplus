@@ -18,7 +18,7 @@ Config.TrapperLocations = {
     {name = 'Riggs Station Trapper',  location = 'riggsstation-trapper',  coords = vector3(-1006.938, -549.3896, 99.393592), showblip = true, showmarker = true }, --riggsstation
     {name = 'West Elizabeth Trapper', location = 'westelizabeth-trapper', coords = vector3(-2843.525, 142.12048, 184.59883), showblip = true, showmarker = true }, --westelizabeth
     {name = 'Stawberry Trapper',      location = 'stawberry-trapper',     coords = vector3(-1746.238, -388.9359, 101.29882), showblip = true, showmarker = true }, --stawberry
-    {name = 'Tumbleweed Trapper',      location = 'tumbleweed-trapper',   coords = vector3(-5512.208, -2952.122, -1.791797), showblip = true, showmarker = true }, --tumbleweed
+    {name = 'Tumbleweed Trapper',     location = 'tumbleweed-trapper',   coords = vector3(-5512.208, -2952.122, -1.791797), showblip = true, showmarker = true }, --tumbleweed
 }
 
 Config.TrapperShop = {
@@ -29,7 +29,7 @@ Config.TrapperShop = {
 
 -- pelt sell prices
 Config.PoorPeltPrice = 1
-Config.GoodPletPrice = 2
+Config.GoodPeltPrice = 2
 Config.PerfectPeltPrice = 3
 Config.LegendaryPeltPrice = 10
 
