@@ -1,18 +1,18 @@
-local QRCore = exports['qr-core']:GetCoreObject()
+local RSGCore = exports['rsg-core']:GetCoreObject()
 
 -- store pelt to inventory
 RegisterNetEvent('rsg-trapperplus:server:storepelt')
 AddEventHandler('rsg-trapperplus:server:storepelt', function(pelt)
     local src = source
-    local Player = QRCore.Functions.GetPlayer(src)
+    local Player = RSGCore.Functions.GetPlayer(src)
     Player.Functions.AddItem(pelt, 1)
-    TriggerClientEvent('inventory:client:ItemBox', src, QRCore.Shared.Items[pelt], "add")
+    TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[pelt], "add")
 end)
 
 RegisterServerEvent('rsg-trapperplus:server:sellpelts')
 AddEventHandler('rsg-trapperplus:server:sellpelts', function()
     local src = source
-    local Player = QRCore.Functions.GetPlayer(src)
+    local Player = RSGCore.Functions.GetPlayer(src)
     local price = 0
     local haspelts = false
     if Player.PlayerData.items ~= nil and next(Player.PlayerData.items) ~= nil then 
@@ -352,10 +352,10 @@ AddEventHandler('rsg-trapperplus:server:sellpelts', function()
         end
         if haspelts == true then
             Player.Functions.AddMoney(Config.PaymentType, price, "pelts-sold")
-            QRCore.Functions.Notify(source, 'you have sold all your pelts for $'..price, 'success')
+            RSGCore.Functions.Notify(source, 'you have sold all your pelts for $'..price, 'success')
             haspelts = false
         else
-            QRCore.Functions.Notify(source, 'you don\'t have any pelts to sell!', 'error')
+            RSGCore.Functions.Notify(source, 'you don\'t have any pelts to sell!', 'error')
         end
     end
 end)

@@ -1,11 +1,11 @@
-local QRCore = exports['qr-core']:GetCoreObject()
+local RSGCore = exports['rsg-core']:GetCoreObject()
 
 -----------------------------------------------------------------------------------
 
 -- prompts
 Citizen.CreateThread(function()
     for trapper, v in pairs(Config.TrapperLocations) do
-        exports['qr-core']:createPrompt(v.location, v.coords, QRCore.Shared.Keybinds['J'], 'Open ' .. v.name, {
+        exports['rsg-core']:createPrompt(v.location, v.coords, RSGCore.Shared.Keybinds['J'], 'Open ' .. v.name, {
             type = 'client',
             event = 'rsg-trapperplus:client:menu',
             args = {},
@@ -36,7 +36,7 @@ end)
 
 -- trapper menu
 RegisterNetEvent('rsg-trapperplus:client:menu', function()
-    exports['qr-menu']:openMenu({
+    exports['rsg-menu']:openMenu({
         {
             header = 'Trapper Menu',
             isMenuHeader = true,
@@ -64,7 +64,7 @@ RegisterNetEvent('rsg-trapperplus:client:menu', function()
             header = "Close Menu",
             txt = '',
             params = {
-                event = 'qr-menu:closeMenu',
+                event = 'rsg-menu:closeMenu',
             }
         },
     })
@@ -74,7 +74,7 @@ end)
 
 -- process bar before sell pelts
 RegisterNetEvent('rsg-trapperplus:client:sellpelts', function()
-    QRCore.Functions.Progressbar('make-product', 'Checking Pelts', Config.SellTime, false, true, {
+    RSGCore.Functions.Progressbar('make-product', 'Checking Pelts', Config.SellTime, false, true, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
@@ -108,10 +108,10 @@ Citizen.CreateThread(function()
                 end
                 local deleted = DeleteThis(holding)
                 if deleted then
-                    QRCore.Functions.Notify(name..' Stored', 'primary')
+                    RSGCore.Functions.Notify(name..' Stored', 'primary')
                     TriggerServerEvent('rsg-trapperplus:server:storepelt', rewarditem)
                 else
-                    QRCore.Functions.Notify('something went wrong!', 'error')
+                    RSGCore.Functions.Notify('something went wrong!', 'error')
                 end
             end
         end
