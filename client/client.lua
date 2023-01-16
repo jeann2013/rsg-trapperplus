@@ -5,7 +5,7 @@ local RSGCore = exports['rsg-core']:GetCoreObject()
 -- prompts
 Citizen.CreateThread(function()
     for trapper, v in pairs(Config.TrapperLocations) do
-        exports['rsg-core']:createPrompt(v.location, v.coords, RSGCore.Shared.Keybinds['J'], 'Open ' .. v.name, {
+        exports['rsg-core']:createPrompt(v.location, v.coords, RSGCore.Shared.Keybinds['J'],  Lang:t('menu.open') .. v.name, {
             type = 'client',
             event = 'rsg-trapperplus:client:menu',
             args = {},
@@ -25,12 +25,12 @@ end)
 RegisterNetEvent('rsg-trapperplus:client:menu', function()
     exports['rsg-menu']:openMenu({
         {
-            header = 'Trapper Menu',
+            header =  Lang:t('menu.trapper_menu'),
             isMenuHeader = true,
         },
         {
-            header = "Sell Stored Pelts",
-            txt = "text goes here",
+            header = Lang:t('menu.sell_stored_pelts'),
+            txt = Lang:t('text.sell_store_pelts'),
             icon = "fas fa-paw",
             params = {
                 event = 'rsg-trapperplus:client:sellpelts',
@@ -38,8 +38,8 @@ RegisterNetEvent('rsg-trapperplus:client:menu', function()
             }
         },
         {
-            header = "Open Trapper Shop",
-            txt = "buy items from the fish vendor",
+            header = Lang:t('menu.open_trapper_shop'),
+            txt = Lang:t('text.buy_items_from_the_fish_vendor'),
             icon = "fas fa-shopping-basket",
             params = {
                 event = 'rsg-trapperplus:client:OpenTrapperShop',
@@ -48,7 +48,7 @@ RegisterNetEvent('rsg-trapperplus:client:menu', function()
             }
         },
         {
-            header = "Close Menu",
+            header = Lang:t('menu.close_menu'),
             txt = '',
             params = {
                 event = 'rsg-menu:closeMenu',
@@ -61,7 +61,7 @@ end)
 
 -- process bar before sell pelts
 RegisterNetEvent('rsg-trapperplus:client:sellpelts', function()
-    RSGCore.Functions.Progressbar('make-product', 'Checking Pelts', Config.SellTime, false, true, {
+    RSGCore.Functions.Progressbar('make-product', Lang:t('progressbar.checking_pelts'), Config.SellTime, false, true, {
         disableMovement = true,
         disableCarMovement = false,
         disableMouse = false,
@@ -95,10 +95,10 @@ Citizen.CreateThread(function()
                 end
                 local deleted = DeleteThis(holding)
                 if deleted then
-                    RSGCore.Functions.Notify(name..' Stored', 'primary')
+                    RSGCore.Functions.Notify(name.. Lang:t('primary.stored'), 'primary')
                     TriggerServerEvent('rsg-trapperplus:server:storepelt', rewarditem)
                 else
-                    RSGCore.Functions.Notify('something went wrong!', 'error')
+                    RSGCore.Functions.Notify( Lang:t('error.something_went_wrong'), 'error')
                 end
             end
         end
@@ -130,7 +130,7 @@ end
 RegisterNetEvent('rsg-trapperplus:client:OpenTrapperShop')
 AddEventHandler('rsg-trapperplus:client:OpenTrapperShop', function()
     local ShopItems = {}
-    ShopItems.label = "Trapper Shop"
+    ShopItems.label = Lang:t('text.trapper_shop')
     ShopItems.items = Config.TrapperShop
     ShopItems.slots = #Config.TrapperShop
     TriggerServerEvent("inventory:server:OpenInventory", "shop", "TrapperShop_"..math.random(1, 99), ShopItems)
