@@ -5,16 +5,19 @@ game 'rdr3'
 author 'RexShack#3041'
 description 'rsg-trapperplus'
 
+shared_scripts {
+    '@rsg-core/shared/locale.lua',
+    'config.lua',
+    'locales/en.lua',
+    'locales/*.lua',
+}
+
 client_scripts {
     'client/client.lua',
 }
 
 server_scripts {
     'server/server.lua',
-}
-
-shared_scripts {
-    'config.lua',
 }
 
 lua54 'yes'

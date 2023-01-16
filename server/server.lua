@@ -352,10 +352,10 @@ AddEventHandler('rsg-trapperplus:server:sellpelts', function()
         end
         if haspelts == true then
             Player.Functions.AddMoney(Config.PaymentType, price, "pelts-sold")
-            RSGCore.Functions.Notify(source, 'you have sold all your pelts for $'..price, 'success')
+            RSGCore.Functions.Notify(source, Lang:t('success.you_have_sold_all_your_pelts_for')..price, 'success')
             haspelts = false
         else
-            RSGCore.Functions.Notify(source, 'you don\'t have any pelts to sell!', 'error')
+            RSGCore.Functions.Notify(source, Lang:t('error.you_dont_have_any_pelts_to_sell'), 'error')
         end
     end
 end)
