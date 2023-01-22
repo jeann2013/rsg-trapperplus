@@ -23,7 +23,7 @@ local Translations = {
         checking_pelts = 'Checking Pelts',
     },
     text = {
-        buy_items_from_the_fish_vendor = 'buy items from the trapper vendor',
+        buy_items_from_the_trapper = 'buy items from the trapper',
         sell_store_pelts = 'sell store items pelts',
         trapper_shop =  'Trapper Shop',
     }

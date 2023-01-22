@@ -39,7 +39,7 @@ RegisterNetEvent('rsg-trapperplus:client:menu', function()
         },
         {
             header = Lang:t('menu.open_trapper_shop'),
-            txt = Lang:t('text.buy_items_from_the_fish_vendor'),
+            txt = Lang:t('text.buy_items_from_the_trapper'),
             icon = "fas fa-shopping-basket",
             params = {
                 event = 'rsg-trapperplus:client:OpenTrapperShop',
