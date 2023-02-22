@@ -429,43 +429,60 @@ Config.Pelts = { -- reward item false or 'itemname'
         ["rewarditem"] = 'perfect_alligator_pelt'
     },
     
+    -- RACCOON
+    [70] =  { -- a_c_raccoon_01 / PROVISION_RACCOON_FUR_POOR
+        ["pelthash"] = 1992476687,
+        ["name"] = "Poor Raccoon Pelt",
+        ["rewarditem"] = 'poor_raccoon_pelt'
+    },
+    [71] =  { -- a_c_raccoon_01 / PROVISION_RACCOON_FUR
+        ["pelthash"] = -1178296218,
+        ["name"] = "Good Raccoon Pelt",
+        ["rewarditem"] = 'good_raccoon_pelt'
+    },
+    [72] =  { -- a_c_raccoon_01 / PROVISION_RACCOON_FUR_PRISTINE
+        ["pelthash"] = -305970307,
+        ["name"] = "Perfect Raccoon Pelt",
+        ["rewarditem"] = 'perfect_raccoon_pelt'
+    },
+    
     -- LEGENDARY
-    [70] =  { -- mp_a_c_alligator_01 / Legendary Sun Gator
+    [73] =  { -- mp_a_c_alligator_01 / Legendary Sun Gator
         ["pelthash"] = -1621144167,
         ["name"] = "Legendary Sun Gator Skin",
         ["rewarditem"] = 'legendary_alligator_pelt'
     },
-    [71] =  { -- mp_a_c_beaver_01 / Legendary Moon Beaver
+    [74] =  { -- mp_a_c_beaver_01 / Legendary Moon Beaver
         ["pelthash"] = -251416414,
         ["name"] = "Legendary Moon Beaver Pelt",
         ["rewarditem"] = 'legendary_beaver_pelt'
     },
-    [72] =  { -- mp_a_c_boar_01 / Legendary Wakpa Boar
+    [75] =  { -- mp_a_c_boar_01 / Legendary Wakpa Boar
         ["pelthash"] = -1249752300,
         ["name"] = "Legendary Wakpa Boar Pelt",
         ["rewarditem"] = 'legendary_boar_pelt'
     },
-    [73] =  { -- mp_a_c_cougar_01 / Legendary Maza Cougar
+    [76] =  { -- mp_a_c_cougar_01 / Legendary Maza Cougar
         ["pelthash"] = 397926876,
         ["name"] = "Legendary Maza Cougar Pelt",
         ["rewarditem"] = 'legendary_cougar_pelt'
     },
-    [74] =  { -- mp_a_c_coyote_01 / Legendary Midnight Paw Coyote
+    [77] =  { -- mp_a_c_coyote_01 / Legendary Midnight Paw Coyote
         ["pelthash"] = 1728819413,
         ["name"] = "Legendary Midnight Paw Coyote Pelt",
         ["rewarditem"] = 'legendary_coyote_pelt'
     },
-    [75] =  { -- mp_a_c_panther_01 / Legendary Ghost Panther
+    [78] =  { -- mp_a_c_panther_01 / Legendary Ghost Panther
         ["pelthash"] = 836208559,
         ["name"] = "Legendary Ghost Panther Pelt",
         ["rewarditem"] = 'legendary_panther_pelt'
     },
-    [76] =  { -- mp_a_c_wolf_01? / Legendary Onyx Wolf
+    [79] =  { -- mp_a_c_wolf_01? / Legendary Onyx Wolf
         ["pelthash"] = -1548204069,
         ["name"] = "Legendary Onyx Wolf Pelt",
         ["rewarditem"] = 'legendary_wolf_pelt'
     },
-    [77] =  { -- mp_a_c_wolf_01 / Legendary Emerald Wolf Pelt
+    [80] =  { -- mp_a_c_wolf_01 / Legendary Emerald Wolf Pelt
         ["pelthash"] = -1946740647,
         ["name"] = "Legendary Emerald Wolf Pelt",
         ["rewarditem"] = 'legendary_wolf_pelt'

@@ -347,6 +347,19 @@ AddEventHandler('rsg-trapperplus:server:sellpelts', function()
                     price = price + (Config.LegendaryPeltPrice * Player.PlayerData.items[k].amount)
                     Player.Functions.RemoveItem("legendary_wolf_pelt", Player.PlayerData.items[k].amount, k)
                     haspelts = true
+                -- raccoon_pelt
+                elseif Player.PlayerData.items[k].name == "poor_raccoon_pelt" then 
+                    price = price + (Config.PoorPeltPrice * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("poor_raccoon_pelt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "good_raccoon_pelt" then 
+                    price = price + (Config.GoodPeltPrice * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("good_raccoon_pelt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "perfect_raccoon_pelt" then 
+                    price = price + (Config.PerfectPeltPrice * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("perfect_raccoon_pelt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
                 end
             end
         end
