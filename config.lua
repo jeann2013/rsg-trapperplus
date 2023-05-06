@@ -528,7 +528,25 @@ Config.Pelts = { -- reward item false or 'itemname'
     { -- mp_a_c_beaver_01 / Legendary Moon Beaver
         pelthash    = -251416414,
         name        = 'Legendary Moon Beaver Pelt',
+        rewarditem1 = 'legendary_moon_beaver_pelt',
+        rewarditem2 = 'raw_meat'
+    },
+    { -- A_C_Beaver_01 / Legendary Beaver
+        pelthash    = -2059726619,
+        name        = 'Legendary Beaver Pelt',
         rewarditem1 = 'legendary_beaver_pelt',
+        rewarditem2 = 'raw_meat'
+    },
+    { -- mp_a_c_beaver_01 / Legendary Zizi Beaver
+        pelthash    = 121494806,
+        name        = 'Legendary Zizi Beaver Pelt',
+        rewarditem1 = 'legendary_zizi_beaver_pelt',
+        rewarditem2 = 'raw_meat'
+    },
+    { -- mp_a_c_beaver_01 / Legendary Night Beaver
+        pelthash    = -1787430524,
+        name        = 'Legendary Night Beaver Pelt',
+        rewarditem1 = 'legendary_night_beaver_pelt',
         rewarditem2 = 'raw_meat'
     },
     { -- mp_a_c_boar_01 / Legendary Wakpa Boar
