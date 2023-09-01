@@ -23,38 +23,28 @@ end)
 
 -- trapper menu
 RegisterNetEvent('rsg-trapperplus:client:menu', function()
-    exports['rsg-menu']:openMenu({
+    lib.registerContext(
         {
-            header =  Lang:t('menu.trapper_menu'),
-            isMenuHeader = true,
-        },
-        {
-            header = Lang:t('menu.sell_stored_pelts'),
-            txt = Lang:t('text.sell_store_pelts'),
-            icon = "fas fa-paw",
-            params = {
-                event = 'rsg-trapperplus:client:sellpelts',
-                isServer = false,
+            id = 'trapper_menu',
+            title = Lang:t('menu.trapper_menu'),
+            position = 'top-right',
+            options = {
+                {
+                    title = Lang:t('menu.sell_stored_pelts'),
+                    description = Lang:t('text.sell_store_pelts'),
+                    icon = 'fas fa-paw',
+                    event = 'rsg-trapperplus:client:sellpelts',
+                },
+                {
+                    title = Lang:t('menu.open_trapper_shop'),
+                    description = Lang:t('text.buy_items_from_the_trapper'),
+                    icon = 'fas fa-shopping-basket',
+                    event = 'rsg-trapperplus:client:OpenTrapperShop',
+                },
             }
-        },
-        {
-            header = Lang:t('menu.open_trapper_shop'),
-            txt = Lang:t('text.buy_items_from_the_trapper'),
-            icon = "fas fa-shopping-basket",
-            params = {
-                event = 'rsg-trapperplus:client:OpenTrapperShop',
-                isServer = false,
-                args = {}
-            }
-        },
-        {
-            header = Lang:t('menu.close_menu'),
-            txt = '',
-            params = {
-                event = 'rsg-menu:closeMenu',
-            }
-        },
-    })
+        }
+    )
+    lib.showContext('trapper_menu')
 end)
 
 -----------------------------------------------------------------------------------

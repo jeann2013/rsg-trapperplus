@@ -6,6 +6,7 @@ author 'RexShack#3041'
 description 'rsg-trapperplus'
 
 shared_scripts {
+    '@ox_lib/init.lua',
     '@rsg-core/shared/locale.lua',
     'config.lua',
     'locales/en.lua',
@@ -18,6 +19,11 @@ client_scripts {
 
 server_scripts {
     'server/server.lua',
+}
+
+dependencies {
+    'rsg-core',
+    'ox_lib',
 }
 
 lua54 'yes'

@@ -6,9 +6,9 @@ AddEventHandler('rsg-trapperplus:server:storepelt', function(rewarditem1, reward
     local src = source
     local Player = RSGCore.Functions.GetPlayer(src)
     Player.Functions.AddItem(rewarditem1, 1)
-	Player.Functions.AddItem(rewarditem2, 1)
+    Player.Functions.AddItem(rewarditem2, 1)
     TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem1], "add")
-	TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem2], "add")
+    TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem2], "add")
 end)
 
 RegisterServerEvent('rsg-trapperplus:server:sellpelts')
