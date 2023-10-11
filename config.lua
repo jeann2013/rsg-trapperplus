@@ -477,7 +477,27 @@ Config.Pelts = { -- reward item false or 'itemname'
         rewarditem1 = 'perfect_wolf_pelt',
         rewarditem2 = 'raw_meat'
     },
-    
+
+    -- LARGE ALLIGATOR
+    { -- a_c_alligator_01 / PROVISION_LARGE_PELT_POOR
+        pelthash    = -1243878166,
+        name        = 'Poor Large Alligator Pelt',
+        rewarditem1 = 'poor_large_alligator_pelt',
+        rewarditem2 = 'raw_meat', 
+    },
+    { -- a_c_alligator_01 / PROVISION_LARGE_PELT_GOOD
+        pelthash    = 143941906,
+        name        = 'Good Large Alligator Pelt',
+        rewarditem1 = 'good_large_alligator_pelt',
+        rewarditem2 = 'raw_meat', 
+    },
+    { -- a_c_alligator_01 / PROVISION_LARGE_PELT_PRISTINE
+        pelthash    = -1475338121,
+        name        = 'Perfect Large Aliigator Pelt',
+        rewarditem1 = 'perfect_large_alligator_pelt',
+        rewarditem2 = 'raw_meat',      
+    },
+
     -- ALLIGATOR
     { -- a_c_alligator_03 / PROVISION_ALLIGATOR_SKIN_POOR
         pelthash    = 1806153689,
