@@ -494,7 +494,7 @@ Config.Pelts = { -- reward item false or 'itemname'
         name        = 'Poor Elk Pelt',
         rewarditem1 = 'poor_elk_pelt',
         rewarditem2 = 'raw_meat',
-        rewarditem3 = 'raw_meat'
+        rewarditem3 = 'raw_meat',
         rewarditemAmount = 1
     },
     { -- a_c_elk_01 / PROVISION_ELK_FUR
