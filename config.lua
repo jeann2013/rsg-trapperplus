@@ -44,7 +44,7 @@ Config.PoorPeltPrice = {
     -- Cougar
     poor_cougar_pelt = 2.00,
     -- Cow
-    poor_cow_pelt = 048,
+    poor_cow_pelt = 0.48,
     -- Coyote
     poor_coyote_pelt = 0.60,
     -- Deer
