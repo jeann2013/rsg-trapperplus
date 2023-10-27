@@ -80,10 +80,14 @@ Citizen.CreateThread(function()
                     local name = Config.Pelts[i].name
                     local rewarditem1 = Config.Pelts[i].rewarditem1
                     local rewarditem2 = Config.Pelts[i].rewarditem2
+                    local rewarditem3 = Config.Pelts[i].rewarditem3
+                    local rewarditemAmount1 = Config.Pelts[i].rewarditemAmount1
+                    local rewarditemAmount2 = Config.Pelts[i].rewarditemAmount2
+                    local rewarditemAmount3 = Config.Pelts[i].rewarditemAmount3
                     local deleted = DeleteThis(holding)
                     if deleted then
                         RSGCore.Functions.Notify(name.. Lang:t('primary.stored'), 'primary')
-                        TriggerServerEvent('rsg-trapperplus:server:storepelt', rewarditem1, rewarditem2)
+                        TriggerServerEvent('rsg-trapperplus:server:storepelt', rewarditem1, rewarditem2, rewarditem3, rewarditemAmount1, rewarditemAmount2, rewarditemAmount3)
                     else
                         RSGCore.Functions.Notify( Lang:t('error.something_went_wrong'), 'error')
                     end
