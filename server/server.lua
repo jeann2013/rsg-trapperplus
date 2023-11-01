@@ -365,6 +365,19 @@ AddEventHandler('rsg-trapperplus:server:sellpelts', function()
                     price = price + (Config.PerfectPeltPrice.perfect_alligator_pelt * Player.PlayerData.items[k].amount)
                     Player.Functions.RemoveItem("perfect_alligator_pelt", Player.PlayerData.items[k].amount, k)
                     haspelts = true
+                -- raccoon_pelt
+                elseif Player.PlayerData.items[k].name == "poor_raccoon_pelt" then 
+                    price = price + (Config.PoorPeltPrice.poor_raccoon_pelt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("poor_raccoon_pelt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "good_raccoon_pelt" then 
+                    price = price + (Config.GoodPeltPrice.good_raccoon_pelt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("good_raccoon_pelt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "perfect_raccoon_pelt" then 
+                    price = price + (Config.PerfectPeltPrice.perfect_raccoon_pelt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("perfect_raccoon_pelt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
                 -- legendary_alligator_pelt
                 elseif Player.PlayerData.items[k].name == "legendary_alligator_pelt" then 
                     price = price + (Config.LegendaryPeltPrice.legendary_alligator_pelt * Player.PlayerData.items[k].amount)
@@ -395,18 +408,31 @@ AddEventHandler('rsg-trapperplus:server:sellpelts', function()
                     price = price + (Config.LegendaryPeltPrice.legendary_wolf_pelt * Player.PlayerData.items[k].amount)
                     Player.Functions.RemoveItem("legendary_wolf_pelt", Player.PlayerData.items[k].amount, k)
                     haspelts = true
-                -- raccoon_pelt
-                elseif Player.PlayerData.items[k].name == "poor_raccoon_pelt" then 
-                    price = price + (Config.PoorPeltPrice.poor_raccoon_pelt * Player.PlayerData.items[k].amount)
-                    Player.Functions.RemoveItem("poor_raccoon_pelt", Player.PlayerData.items[k].amount, k)
+                    -- legendary_wolf_pelt
+                elseif Player.PlayerData.items[k].name == "legendary_bighorn_ram_pelt" then 
+                    price = price + (Config.LegendaryPeltPrice.legendary_bighorn_ram_pelt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("legendary_bighorn_ram_pelt", Player.PlayerData.items[k].amount, k)
                     haspelts = true
-                elseif Player.PlayerData.items[k].name == "good_raccoon_pelt" then 
-                    price = price + (Config.GoodPeltPrice.good_raccoon_pelt * Player.PlayerData.items[k].amount)
-                    Player.Functions.RemoveItem("good_raccoon_pelt", Player.PlayerData.items[k].amount, k)
+                    -- legendary_wolf_pelt
+                elseif Player.PlayerData.items[k].name == "legendary_tatanka_bison_pelt" then 
+                    price = price + (Config.LegendaryPeltPrice.legendary_tatanka_bison_pelt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("legendary_tatanka_bison_pelt", Player.PlayerData.items[k].amount, k)
                     haspelts = true
-                elseif Player.PlayerData.items[k].name == "perfect_raccoon_pelt" then 
-                    price = price + (Config.PerfectPeltPrice.perfect_raccoon_pelt * Player.PlayerData.items[k].amount)
-                    Player.Functions.RemoveItem("perfect_raccoon_pelt", Player.PlayerData.items[k].amount, k)
+                elseif Player.PlayerData.items[k].name == "legendary_moon_beaver_pelt" then 
+                    price = price + (Config.LegendaryPeltPrice.legendary_moon_beaver_pelt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("legendary_moon_beaver_pelt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "legendary_zizi_beaver_pelt" then 
+                    price = price + (Config.LegendaryPeltPrice.legendary_zizi_beaver_pelt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("legendary_zizi_beaver_pelt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "legendary_night_beaver_pelt" then 
+                    price = price + (Config.LegendaryPeltPrice.legendary_night_beaver_pelt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("legendary_night_beaver_pelt", Player.PlayerData.items[k].amount, k)
+                    haspelts = true
+                elseif Player.PlayerData.items[k].name == "legendary_beaver_pelt" then 
+                    price = price + (Config.LegendaryPeltPrice.legendary_beaver_pelt * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem("legendary_beaver_pelt", Player.PlayerData.items[k].amount, k)
                     haspelts = true
                 end
             end
