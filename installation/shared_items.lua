@@ -105,6 +105,12 @@
     ['legendary_panther_pelt']   = {['name'] = 'legendary_panther_pelt',   ['label'] = 'Leg Panther Pelt',   ['weight'] = 500,  ['type'] = 'item', ['image'] = 'pelt_perfect.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Perfect (* * *)'},
     -- mp_a_c_wolf_01
     ['legendary_wolf_pelt']      = {['name'] = 'legendary_wolf_pelt',      ['label'] = 'Leg Wolf Pelt',      ['weight'] = 500,  ['type'] = 'item', ['image'] = 'pelt_perfect.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Perfect (* * *)'},
+    -- mp_a_c_buffalo_01
+    ['legendary_tatanka_bison_pelt']   = {['name'] = 'legendary_tatanka_bison_pelt',   ['label'] = 'Leg Bison Pelt',   ['weight'] = 500,  ['type'] = 'item', ['image'] = 'pelt_legendary.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Perfect (* * *)'},
+    -- mp_a_c_bighornram_01
+    ['legendary_bighorn_ram_pelt']      = {['name'] = 'legendary_bighorn_ram_pelt',      ['label'] = 'Leg Bighorn Ram Pelt',      ['weight'] = 500,  ['type'] = 'item', ['image'] = 'pelt_legendary.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Perfect (* * *)'},
+    -- mp_a_c_fox_01
+    ['legendary_fox_pelt']      = {['name'] = 'legendary_fox_pelt',      ['label'] = 'Leg Fox Pelt',      ['weight'] = 500,  ['type'] = 'item', ['image'] = 'pelt_legendary.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Perfect (* * *)'},
     -- a_c_raccoon_01
     ['perfect_raccoon_pelt']   = {['name'] = 'perfect_raccoon_pelt',   ['label'] = 'Raccoon Pelt',     ['weight'] = 500,  ['type'] = 'item', ['image'] = 'pelt_perfect.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Perfect (* * *)'},
     ['good_raccoon_pelt']      = {['name'] = 'good_raccoon_pelt',      ['label'] = 'Raccoon Pelt',     ['weight'] = 500,  ['type'] = 'item', ['image'] = 'pelt_good.png',    ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'Good (* *)'},
