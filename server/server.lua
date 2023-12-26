@@ -31,7 +31,7 @@ end
 
 -----------------------------------------------------------------------
 
--- store pelt to inventory
+-- sell pelt from inventory
 RegisterServerEvent('rsg-trapperplus:server:sellpelts')
 AddEventHandler('rsg-trapperplus:server:sellpelts', function()
     local src = source
