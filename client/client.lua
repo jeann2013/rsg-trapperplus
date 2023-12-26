@@ -4,20 +4,37 @@ local RSGCore = exports['rsg-core']:GetCoreObject()
 
 -- prompts
 Citizen.CreateThread(function()
-    for trapper, v in pairs(Config.TrapperLocations) do
-        exports['rsg-core']:createPrompt(v.location, v.coords, RSGCore.Shared.Keybinds['J'],  Lang:t('menu.open') .. v.name, {
-            type = 'client',
-            event = 'rsg-trapperplus:client:menu',
-            args = {},
-        })
-        if v.showblip == true then
-            local TrapperBlip = Citizen.InvokeNative(0x554D9D53F696D002, 1664425300, v.coords)
-            SetBlipSprite(TrapperBlip, GetHashKey(Config.Blip.blipSprite), true)
-            SetBlipScale(TrapperBlip, Config.Blip.blipScale)
-            Citizen.InvokeNative(0x9CB1A1623062F402, TrapperBlip, Config.Blip.blipName)
+    for _, trapperLocation in pairs(Config.TrapperLocations) do
+        createTrapperPrompt(trapperLocation)
+        if trapperLocation.showblip then
+            createTrapperBlip(trapperLocation)
         end
     end
 end)
+
+function createTrapperPrompt(locationData)
+    local promptText = Lang:t('menu.open') .. locationData.name
+
+    exports['rsg-core']:createPrompt(locationData.location, locationData.coords, RSGCore.Shared.Keybinds['J'], promptText, {
+        type = 'client',
+        event = 'rsg-trapperplus:client:menu',
+        args = {},
+    })
+end
+
+function createTrapperBlip(locationData)
+    local trapperBlip = AddBlipForCoord(locationData.coords.x, locationData.coords.y, locationData.coords.z)
+
+    SetBlipSprite(trapperBlip, Config.Blip.blipSprite)
+    SetBlipScale(trapperBlip, Config.Blip.blipScale)
+    SetBlipDisplay(trapperBlip, Config.Blip.blipDisplay)
+    SetBlipColour(trapperBlip, Config.Blip.blipColor)
+    SetBlipAsShortRange(trapperBlip, true)
+    BeginTextCommandSetBlipName('STRING')
+    AddTextComponentString(Config.Blip.blipName)
+    EndTextCommandSetBlipName(trapperBlip)
+end
+-- prompts
 
 -----------------------------------------------------------------------------------
 
