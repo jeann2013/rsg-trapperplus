@@ -32,46 +32,59 @@ end
 -----------------------------------------------------------------------
 
 -- store pelt to inventory
-RegisterNetEvent('rsg-trapperplus:server:storepelt')
-AddEventHandler('rsg-trapperplus:server:storepelt', function(rewarditem1, rewarditem2, rewarditem3, rewarditemAmount1, rewarditemAmount2, rewarditemAmount3)
-    local src = source
-    local Player = RSGCore.Functions.GetPlayer(src)
-    Player.Functions.AddItem(rewarditem1, rewarditemAmount1)
-    Player.Functions.AddItem(rewarditem2, rewarditemAmount2)
-    Player.Functions.AddItem(rewarditem3, rewarditemAmount3)
-    TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem1], "add")
-    TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem2], "add")
-    TriggerClientEvent('inventory:client:ItemBox', src, RSGCore.Shared.Items[rewarditem3], "add")
-end)
-
 RegisterServerEvent('rsg-trapperplus:server:sellpelts')
 AddEventHandler('rsg-trapperplus:server:sellpelts', function()
     local src = source
     local Player = RSGCore.Functions.GetPlayer(src)
+    
+    if not Player then
+        return
+    end
+
     local price = 0
-    local haspelts = false
+    local hasPelts = false
 
-    local peltTypes = {
-        "bear", "black_bear", "boar", "buck", "buffalo", "bull", "cougar", "cow",
-        "coyote", "deer", "elk", "fox", "goat", "javelina", "moose", "ox", "panther",
-        "pig", "pronghorn", "bighornram", "sheep", "wolf", "large_alligator",
-        "alligator", "raccoon", "legendary_alligator", "legendary_boar",
-        "legendary_cougar", "legendary_coyote", "legendary_panther", "legendary_wolf",
-        "legendary_bighorn_ram", "legendary_tatanka_bison", "legendary_moon_beaver",
-        "legendary_zizi_beaver", "legendary_night_beaver"
-    }
+    if Player.PlayerData.items and next(Player.PlayerData.items) then
+        for k, v in pairs(Player.PlayerData.items) do
+            local peltType = GetPeltType(k)
 
-    for _, peltType in ipairs(peltTypes) do
-        for quality, priceMultiplier in pairs(Config[quality.."PeltPrice"]) do
-            local itemName = quality.."_"..peltType.."_pelt"
-            if Player.PlayerData.items[itemName] then
-                price = price + (priceMultiplier * Player.PlayerData.items[itemName].amount)
-                Player.Functions.RemoveItem(itemName, Player.PlayerData.items[itemName].amount)
-                haspelts = true
+            if peltType then
+                local peltConfig = Config.PeltTypes[peltType]
+
+                if peltConfig then
+                    price = price + (peltConfig.Price * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem(k, Player.PlayerData.items[k].amount)
+                    hasPelts = true
+                end
             end
+        end
+
+        if hasPelts then
+            Player.Functions.AddMoney(Config.PaymentType, price, "pelts-sold")
+            RSGCore.Functions.Notify(src, Lang:t('success.you_have_sold_all_your_pelts_for') .. price, 'success')
+        else
+            RSGCore.Functions.Notify(src, Lang:t('error.you_dont_have_any_pelts_to_sell'), 'error')
         end
     end
 end)
+
+function GetPeltType(itemName)
+    local peltTypes = {
+        "bear", "black_bear", "boar", "buck", "buffalo", "bull", "cougar", "cow", "coyote",
+        "deer", "elk", "fox", "goat", "javelina", "moose", "ox", "panther", "pig", "pronghorn",
+        "bighornram", "sheep", "wolf", "large_alligator", "alligator", "legendary_alligator",
+        "legendary_boar", "legendary_cougar", "legendary_coyote", "legendary_panther", "legendary_wolf", "raccoon"
+    }
+
+    for _, peltType in ipairs(peltTypes) do
+        if string.match(itemName, peltType) then
+            return peltType
+        end
+    end
+
+    return nil
+end
+
 
 
 --------------------------------------------------------------------------------------------------
